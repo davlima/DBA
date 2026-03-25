@@ -1,0 +1,7 @@
+-- Objetivo: Identificar sessões ativas em ambiente Oracle
+-- Cenário: Investigação de lentidão reportada por usuários
+-- Uso: Suporte N2/N3
+
+SELECT sid, serial#, username, status, program
+FROM v$session
+WHERE status = 'ACTIVE';
